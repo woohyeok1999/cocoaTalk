@@ -1,0 +1,149 @@
+/* * .wrap, .side-panel, .content, div, span {
+    background-color: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+} */
+
+* {
+    box-sizing: border-box !important;
+}
+
+
+
+.wrap {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    gap:24px;
+}
+
+body {
+    height: 100vh;
+    background-color: #e6e6e3;
+    overflow: hidden;
+}
+
+/* 색깔 쓰는 법 : rgba(R,G,B,0~1), #16진수 */
+
+.side-panel {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap:12px;
+    }
+}
+
+@media screen and (min-width:800px) {
+    .side-panel {
+        display: flex;
+    }
+}
+/**/
+
+button {
+    width: 100%;
+    border-radius: 12px;
+    background-color: white;
+    border: none;
+    height: 42px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 18px;
+    padding: 12px;
+    .side-panel & {
+        margin-bottom: 12px;
+    }
+}
+
+/* .side-panel의 자손인 h3 */
+/*
+div {
+    &>span {
+
+    }
+}
+
+div span {
+
+}
+*/
+
+
+
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 18px;
+    gap:6px;
+    align-items: flex-end;
+    background-color: white;
+    box-shadow: 0 12px 36px -14px rgba(0,0,0,0.1);
+
+    position: relative;
+    z-index: 1;
+}
+
+.tab-item {
+    color: #888;
+    font-size: 18px;
+    font-weight: 600;
+    &.activated {
+    font-size: 22px;
+    color: #333;
+
+}
+
+}
+
+.flex {
+    display: flex;
+    &.row {
+        flex-direction: row;
+    }
+    &.column {
+        flex-direction: column;
+    }
+}
+
+.chatroom-list {
+    padding: 18px;
+    background-color: white;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.chatroom {
+    padding: 18px;
+    border-bottom: 1px solid #00000012;
+    gap:12px;
+    img {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        border: 1px solid #00000010;
+    }
+}
+
+.chat-descriptions {
+    gap:4px;
+
+}
+
+.chatroom-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+.chatroom-last-msg {
+    font-size: 12px;
+}
+
+.filling {min-height:50px;}
+
+
+
+
